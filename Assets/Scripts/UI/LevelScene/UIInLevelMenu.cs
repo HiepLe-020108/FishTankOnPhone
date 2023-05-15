@@ -65,6 +65,7 @@ public class UIInLevelMenu : MonoBehaviour
     private void LoadNextLevel()
     {
         ScenesManager.Instance.LoadNextScene();
+        Time.timeScale = 1f;
     }
     private void LoadMainMenu()
     { 
@@ -73,6 +74,7 @@ public class UIInLevelMenu : MonoBehaviour
     private void ToHomeScene()
     {   
         ScenesManager.Instance.LoadHomeScene();
+        Time.timeScale = 1f;
     }
     private void Pause()
     {

@@ -27,13 +27,4 @@ public class FishTypeSO : ScriptableObject
    public string FishInformation;
 
 }
-[System.Serializable]
-public class FishDataWrapper
-{
-   public List<FishTypeSO> fishList;
 
-   public FishDataWrapper(List<FishTypeSO> fishList)
-   {
-      this.fishList = fishList;
-   }
-}

@@ -60,12 +60,14 @@ public class GUIHomeSceneMenu : MonoBehaviour
         private void LoadLevel1()
         {
             ScenesManager.Instance.LoadNewGame();
+            DataManager.Instance.RestoreTaggedObjects();
             Time.timeScale = 1f;
         }
 
         private void LoadLevel2()
         {
             ScenesManager.Instance.LoadLevel02Game();
+            DataManager.Instance.RestoreTaggedObjects();
             Time.timeScale = 1f;
         }
         

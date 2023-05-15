@@ -21,7 +21,7 @@ MonoBehaviour:
   FishType: 1
   timeNeedToGrow: 120
   foodTag: Food
-  fishInfo: "\u0110\xE2y la\u0300 ca\u0301 be\u0301"
+  fishInfo: This is small fish
   objectToSpawn: {fileID: 7667004402079068645, guid: b2326d97df83f0440bdf28ddd32af073, type: 3}
   timeNeedToSpawn: 15
   FishInformation: 

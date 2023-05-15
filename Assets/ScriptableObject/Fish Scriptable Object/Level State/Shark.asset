@@ -21,7 +21,7 @@ MonoBehaviour:
   FishType: 3
   timeNeedToGrow: 1000000
   foodTag: Fish
-  fishInfo: "\u0110\xE2y la\u0300 ca\u0301 to"
+  fishInfo: This is big fish
   objectToSpawn: {fileID: 7667004402079068645, guid: 09119d31fa421cb4da46ad437ad2f8fa, type: 3}
   timeNeedToSpawn: 30
   FishInformation: 
