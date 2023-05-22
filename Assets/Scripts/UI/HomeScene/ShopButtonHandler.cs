@@ -22,23 +22,9 @@ public class ShopButtonHandler : MonoBehaviour
 
     private int selectedIndex;
 
-    [SerializeField] private DataManager dataManager;
-
     void Start()
     {
-       
-        if (dataManager.gameObjects != null && dataManager.gameObjects.Count > 0)
-        {
-            Debug.Log(dataManager.gameObjects.Count);
-            foreach (GameObject obj in dataManager.gameObjects)
-            {
-                
-                if (obj != null)
-                {
-                    AddFish(obj);
-                }
-            }
-        }
+        
         buyFishButton.interactable = false;
         moneyManager = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
         for (int i = 0; i < _buttons.Count; i++)
@@ -69,7 +55,6 @@ public class ShopButtonHandler : MonoBehaviour
         var fishNum = fish1 + fish2 + fish3;
         totalNumberOfFishText.SetText(fishNum.ToString());
         totalFish = fishNum;
-        DataManager.Instance.StoreTaggedObjects(new string[] { "Fish", "BigFish", "Shark" });
     }
 
     void AddFish(GameObject fish)
@@ -82,6 +67,5 @@ public class ShopButtonHandler : MonoBehaviour
         var fishNum = fish1 + fish2 + fish3;
         totalNumberOfFishText.SetText(fishNum.ToString());
         totalFish = fishNum;
-        DataManager.Instance.StoreTaggedObjects(new string[] { "Fish", "BigFish", "Shark" });
     }
 }

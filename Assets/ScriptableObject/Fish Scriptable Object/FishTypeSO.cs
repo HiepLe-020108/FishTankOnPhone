@@ -7,7 +7,7 @@ public class FishTypeSO : ScriptableObject
 {
    [Header("Button section", order = 1)]
    public string FishName;
-   public float FishPrice;
+   public int FishPrice;
    public GameObject TheFish;//this is the gameObject that will spawn when player press buy button
    public Sprite FishImage;
    

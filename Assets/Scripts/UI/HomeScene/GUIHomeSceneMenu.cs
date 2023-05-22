@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GUIHomeSceneMenu : MonoBehaviour
 {
-    [Header("Buttons", order = 1)] 
+        [Header("Buttons", order = 1)] 
         [SerializeField] private Button _shopOpenButton;
         [SerializeField] private Button _shopCloseButton;
         [SerializeField] private Button _loadLevel1Button;
@@ -17,7 +17,7 @@ public class GUIHomeSceneMenu : MonoBehaviour
         [SerializeField] private GameObject shopMenu;
         [SerializeField] private GameObject levelSelectMenu;
         
-    
+
         // Start is called before the first frame update
         void Start()
         {
@@ -60,16 +60,15 @@ public class GUIHomeSceneMenu : MonoBehaviour
         private void LoadLevel1()
         {
             ScenesManager.Instance.LoadNewGame();
-            DataManager.Instance.RestoreTaggedObjects();
             Time.timeScale = 1f;
         }
 
         private void LoadLevel2()
         {
             ScenesManager.Instance.LoadLevel02Game();
-            DataManager.Instance.RestoreTaggedObjects();
             Time.timeScale = 1f;
         }
+    
         
 }
 

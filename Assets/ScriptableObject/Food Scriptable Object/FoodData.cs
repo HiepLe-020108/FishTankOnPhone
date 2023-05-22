@@ -5,7 +5,7 @@ using UnityEngine;
 public class FoodData : ScriptableObject
 {
     public string nameOfFood;
-    public float priceOfFood = 5f;
+    public int priceOfFood = 5;
     public float nutritionValue = 5f;
     public GameObject fishFood;
     public float fallingSpeed;

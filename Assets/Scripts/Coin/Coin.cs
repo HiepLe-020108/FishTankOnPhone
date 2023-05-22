@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private float coinValue = 3f;
+    [SerializeField] private int coinValue = 3;
     
     [SerializeField] private float fallingSpeed;
     [SerializeField] private MoneyManager moneyManager; //a reference to the MoneyManager class, gameObject MoneyManager need to be a prefab
