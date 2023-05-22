@@ -15,7 +15,6 @@ public class ScenesManager : MonoBehaviour
 
     public enum Scene
     {
-        MainMenu,
         HomeScene,
         Level01,
         Level02
@@ -39,12 +38,6 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene(Scene.MainMenu.ToString());
-    }
-
     public void LoadHomeScene()
     {
         SceneManager.LoadScene(Scene.HomeScene.ToString());

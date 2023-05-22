@@ -13,13 +13,13 @@ public class MoneyManager : MonoBehaviour, IDataPersistence
     
     public delegate void OnMoneyChangedDelegate(float newTotalMoney);
     public event OnMoneyChangedDelegate OnMoneyChanged;
-    private void Start()
+    private void Awake()
     {
         if (!isHomeScene)
         {
             TotalMoney = startingMoney;
         }
-        else 
+        if(isHomeScene)
         {
             if (TotalMoney == 0)
             {

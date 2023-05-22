@@ -30,10 +30,6 @@ public class UIInLevelMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < _mainMenuButtons.Count; i++)
-        {
-            _mainMenuButtons[i].onClick.AddListener(LoadMainMenu);
-        }
         for (int i = 0; i < _pauseButtons.Count; i++)
         {
             _pauseButtons[i].onClick.AddListener(Pause);
@@ -66,10 +62,6 @@ public class UIInLevelMenu : MonoBehaviour
     {
         ScenesManager.Instance.LoadNextScene();
         Time.timeScale = 1f;
-    }
-    private void LoadMainMenu()
-    { 
-       ScenesManager.Instance.LoadMainMenu();
     }
     private void ToHomeScene()
     {   
