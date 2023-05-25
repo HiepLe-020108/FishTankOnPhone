@@ -14,7 +14,7 @@ public class SpawnAndManagerFish : MonoBehaviour
 {
     [SerializeField] Vector3 placeToSpawn;
 
-    private MoneyManager moneyManager;
+    private MoneyManagerForLevel moneyManager;
     [SerializeField] private List<string> tagOfFishType1 = new List<string>();
     [SerializeField] private List<string> tagOfFishType2 = new List<string>();
     
@@ -25,7 +25,7 @@ public class SpawnAndManagerFish : MonoBehaviour
     public int totalFish;
     void Start()
     {
-        moneyManager = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
+        moneyManager = GameObject.Find("MoneyManager").GetComponent<MoneyManagerForLevel>();
         for (int i = 0; i < _buttons.Count; i++)
         {
             var index = i;

@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
     [SerializeField] private int coinValue = 3;
     
     [SerializeField] private float fallingSpeed;
-    [SerializeField] private MoneyManager moneyManager; //a reference to the MoneyManager class, gameObject MoneyManager need to be a prefab
+    [SerializeField] private MoneyManagerForLevel moneyManager; //a reference to the MoneyManager class, gameObject MoneyManager need to be a prefab
     [SerializeField] private string tagObjectThatCollectMoney;
     private GameObject bottom;
     [SerializeField] private GameObject thisObject;
@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
     void Start()
     {
         bottom = GameObject.Find("Bottom");
-        moneyManager = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
+        moneyManager = GameObject.Find("MoneyManager").GetComponent<MoneyManagerForLevel>();
     }
 
     // Update is called once per frame

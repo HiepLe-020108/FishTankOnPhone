@@ -19,7 +19,7 @@ public class SpawnFoodOnTouch : MonoBehaviour
     private GameObject right;
     private GameObject left;
 
-    private MoneyManager moneyManager; 
+    private MoneyManagerForLevel moneyManager; 
     [SerializeField] private bool buyFood = true;
 
     [SerializeField] private TMP_Text foodPriceText;
@@ -33,7 +33,7 @@ public class SpawnFoodOnTouch : MonoBehaviour
         bottom = GameObject.Find("Bottom");
         right = GameObject.Find("Right");
         left = GameObject.Find("Left");
-        moneyManager = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
+        moneyManager = GameObject.Find("MoneyManager").GetComponent<MoneyManagerForLevel>();
     }
 
     // Update is called once per frame

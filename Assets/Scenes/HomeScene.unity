@@ -2180,6 +2180,7 @@ Transform:
   - {fileID: 1984095299}
   - {fileID: 795684706}
   - {fileID: 1296744999}
+  - {fileID: 1764167389}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16364,6 +16365,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698027795}
   m_CullTransparentMesh: 1
+--- !u!1 &1764167388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1764167389}
+  - component: {fileID: 1764167390}
+  m_Layer: 0
+  m_Name: LevelUnlockManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1764167389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764167388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 563725511}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764167390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764167388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640a111104f7bf74ea8188e80d8e39fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelButtons:
+  - {fileID: 623772974}
+  levelValues: 01000000
 --- !u!1 &1773960727
 GameObject:
   m_ObjectHideFlags: 0
@@ -16806,8 +16854,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2198c54c579cb3b4eaddcd096b17020d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: HiieeppData.txt
-  useEncryption: 0
+  fileName: HomeSceneData.txt
+  useEncryption: 1
 --- !u!1 &1984095297
 GameObject:
   m_ObjectHideFlags: 0
@@ -16840,6 +16888,7 @@ MonoBehaviour:
   TotalMoney: 0
   startingMoney: 1000
   moneyText: {fileID: 646161761}
+  isHomeScene: 0
 --- !u!4 &1984095299
 Transform:
   m_ObjectHideFlags: 0

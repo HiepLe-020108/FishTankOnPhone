@@ -11763,7 +11763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1158304263}
-  - component: {fileID: 1158304262}
+  - component: {fileID: 1158304264}
   m_Layer: 0
   m_Name: MoneyManager
   m_TagString: Untagged
@@ -11771,22 +11771,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1158304262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158304261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1148ee376a45db409f727fc382a44fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TotalMoney: 0
-  startingMoney: 1000
-  moneyText: {fileID: 1160886653}
-  isHomeScene: 0
 --- !u!4 &1158304263
 Transform:
   m_ObjectHideFlags: 0
@@ -11802,6 +11786,22 @@ Transform:
   m_Father: {fileID: 1614243907}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1158304264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158304261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e47bf98250c0d943a5f9a8811d98bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalMoney: 0
+  startingMoney: 1000
+  moneyText: {fileID: 1160886653}
+  isHomeScene: 0
 --- !u!1 &1160886651
 GameObject:
   m_ObjectHideFlags: 0
@@ -11981,11 +11981,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1190643593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2198c54c579cb3b4eaddcd096b17020d, type: 3}
+  m_Script: {fileID: 11500000, guid: f6063f59a420094479c408b7a5b1cb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: NumberOfLevelHaveCompleted.txt
-  useEncryption: 0
+  wincondition: {fileID: 1933772628}
+  levelNumberIfPlayerWin: 1
 --- !u!1 &1192596721
 GameObject:
   m_ObjectHideFlags: 0
@@ -15726,11 +15726,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishManager: {fileID: 1356903785}
-  moneyManager: {fileID: 1158304262}
+  moneyManager: {fileID: 1158304264}
   fishWinCondition: 10
   coinWinCondition: 1200
   doneMenu: {fileID: 714140363}
-  levelNumber: 1
 --- !u!1 &1940191996
 GameObject:
   m_ObjectHideFlags: 0
