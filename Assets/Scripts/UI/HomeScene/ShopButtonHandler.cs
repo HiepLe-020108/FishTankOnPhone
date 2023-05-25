@@ -14,12 +14,12 @@ public class ShopButtonHandler : MonoBehaviour
     
     [SerializeField] private List<SetupButtonBuyFish> _buttons;
     [SerializeField] private List<FishTypeSO> fishTypeSOList = new List<FishTypeSO>();
-    
+    [SerializeField] private List<GameObject> fishGameObjectList = new List<GameObject>();
     [SerializeField] private Button buyFishButton;
     
     [SerializeField] private TMP_Text totalNumberOfFishText;
-    public int totalFish;
-
+    
+    private int TotalFish;
     private int selectedIndex;
 
     void Start()
@@ -30,6 +30,7 @@ public class ShopButtonHandler : MonoBehaviour
         for (int i = 0; i < _buttons.Count; i++)
         {
             var index = i;
+            fishGameObjectList[index].SetActive(false);
             _buttons[index].SetupButton(fishTypeSOList[index],() => ShowInfo(index));
         }
         buyFishButton.onClick.AddListener(() => AddFish(selectedIndex));
@@ -45,7 +46,8 @@ public class ShopButtonHandler : MonoBehaviour
     {
         if (moneyManager.TotalMoney >= fishTypeSOList[index].FishPrice)
         {
-            GameObject clone = Instantiate(fishTypeSOList[index].TheFish, placeToSpawn, Quaternion.identity);
+            fishGameObjectList[index].SetActive(true);
+            //Here
             moneyManager.SubMoney(fishTypeSOList[index].FishPrice);
         }
         var fish1 = GameObject.FindGameObjectsWithTag(tagOfFishType1[0]).Length;
@@ -54,7 +56,7 @@ public class ShopButtonHandler : MonoBehaviour
 
         var fishNum = fish1 + fish2 + fish3;
         totalNumberOfFishText.SetText(fishNum.ToString());
-        totalFish = fishNum;
+        TotalFish = fishNum;
     }
 
     void AddFish(GameObject fish)
@@ -66,6 +68,6 @@ public class ShopButtonHandler : MonoBehaviour
         var fish3 = GameObject.FindGameObjectsWithTag(tagOfFishType2[0]).Length;
         var fishNum = fish1 + fish2 + fish3;
         totalNumberOfFishText.SetText(fishNum.ToString());
-        totalFish = fishNum;
+        TotalFish = fishNum;
     }
 }
