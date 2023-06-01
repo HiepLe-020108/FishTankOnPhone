@@ -8,15 +8,14 @@ public class GameData
     public int moneyCount;
     public int completedLevels;
     public SerializableDictionary<string, bool> unlockedFish;
-    public SerializableDictionary<string, bool> buttonInteractableStates;
-    public SerializableDictionary<string, bool> fishObjectsCollected;
+  
+    public SerializableDictionary<string, bool> fishHadBeenBuy;
 
     public GameData()
     {
         moneyCount = 0;
         completedLevels = 0;
         unlockedFish = new SerializableDictionary<string, bool>();
-        buttonInteractableStates = new SerializableDictionary<string, bool>();
-        fishObjectsCollected = new SerializableDictionary<string, bool>();
+        fishHadBeenBuy = new SerializableDictionary<string, bool>();
     }
 }

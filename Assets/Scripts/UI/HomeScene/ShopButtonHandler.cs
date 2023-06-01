@@ -5,24 +5,28 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class ShopButtonHandler : MonoBehaviour
+public class ShopButtonHandler : MonoBehaviour, IDataPersistence
 {
-    [SerializeField] Vector3 placeToSpawn;
-
     private MoneyManager moneyManager;
-    [SerializeField] private List<string> tagOfFishType1 = new List<string>();
-    [SerializeField] private List<string> tagOfFishType2 = new List<string>();
-
-    [SerializeField] private List<SetupButtonBuyFish> _buttons;
-    [SerializeField] private List<FishTypeSO> fishTypeSOList = new List<FishTypeSO>();
-    [SerializeField] private List<GameObject> fishGameObjectList = new List<GameObject>();
-    [SerializeField] private Button buyFishButton;
-
-    [SerializeField] private TMP_Text totalNumberOfFishText;
-
+    
+    
     private int TotalFish;
     private int selectedIndex;
     private Button lastClickedButton;
+    private GameObject fishObejctForData;
+    private string fishID;
+    private bool isActive;
+    
+    [Header("List", order = 1)]
+    [SerializeField] private List<string> tagOfFishType1 = new List<string>();
+    [SerializeField] private List<string> tagOfFishType2 = new List<string>();
+    [SerializeField] private List<SetupButtonBuyFish> _buttons;
+    [SerializeField] private List<FishTypeSO> fishTypeSOList = new List<FishTypeSO>();
+    [SerializeField] private List<GameObject> fishGameObjectList = new List<GameObject>();
+    
+    [Header("UI component", order = 2)]
+    [SerializeField] private Button buyFishButton;
+    [SerializeField] private TMP_Text totalNumberOfFishText;
 
     public static event Action<bool> InteractableStateChanged;
 
@@ -69,6 +73,11 @@ public class ShopButtonHandler : MonoBehaviour
         if (moneyManager.TotalMoney >= fishTypeSOList[index].FishPrice)
         {
             fishGameObjectList[index].SetActive(true);
+            fishObejctForData = fishGameObjectList[index];
+            fishID = fishObejctForData.GetComponent<FishIDMaking>().id;
+            isActive = fishObejctForData.activeSelf;
+            Debug.Log("Fish ID: " + fishID);
+            
             moneyManager.SubMoney(fishTypeSOList[index].FishPrice);
 
             // Disable interaction for the clicked button after adding the fish
@@ -88,5 +97,42 @@ public class ShopButtonHandler : MonoBehaviour
         var fishNum = fish1 + fish2 + fish3;
         totalNumberOfFishText.SetText(fishNum.ToString());
         TotalFish = fishNum;
+    }
+
+    public void SaveData(GameData data)
+    {
+        foreach (GameObject fish in fishGameObjectList)
+        {
+            // Check if the fishID exists in the GameData
+            if (data.fishHadBeenBuy.TryGetValue(fishObejctForData.GetComponent<FishIDMaking>().id, out isActive))
+            {
+                isActive = data.fishHadBeenBuy[fishObejctForData.GetComponent<FishIDMaking>().id];
+            }
+            else
+            {
+                // Add a new entry in the GameData with the fishID and false as the default value
+                data.fishHadBeenBuy.Add(fishObejctForData.GetComponent<FishIDMaking>().id, false);
+            }
+        }
+    }
+    public void LoadData(GameData data)
+    {
+        foreach (GameObject fish in fishGameObjectList)
+        {
+            // Check if the fishID exists in the GameData
+            if (data.fishHadBeenBuy.TryGetValue(fishObejctForData.GetComponent<FishIDMaking>().id, out isActive))
+            {
+                isActive = data.fishHadBeenBuy[fishObejctForData.GetComponent<FishIDMaking>().id];
+            }
+            else
+            {
+                // Add a new entry in the GameData with the fishID and false as the default value
+                data.fishHadBeenBuy.Add(fishObejctForData.GetComponent<FishIDMaking>().id, false);
+            }
+            if (isActive)
+            {
+                fish.SetActive(isActive);
+            }
+        }
     }
 }
