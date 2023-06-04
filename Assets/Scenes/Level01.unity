@@ -11589,6 +11589,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wincondition: {fileID: 1933772628}
   levelNumberIfPlayerWin: 1
+  levelNumber: 0
+  fishIDToUnlockIfWin: 96fa9da0-f0a0-4049-8ccc-97a097af4e49
 --- !u!1 &1192596721
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,19 +20,30 @@ public class DataPersistenceManager : MonoBehaviour
     {
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
+        
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(this);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this);
         }
     }
     
     private void Start()
     {
+        LoadGame();
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
+    {
+        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
+        StartCoroutine(DelayedLoadGame());
+    }
+    private IEnumerator DelayedLoadGame()
+    {
+        yield return new WaitForSeconds(0.01f);
         LoadGame();
     }
 
@@ -50,10 +61,12 @@ public class DataPersistenceManager : MonoBehaviour
             Debug.Log("No data was found. Initializing data to defaults.");
             NewGame();
         }
-
-        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        else
         {
-            dataPersistenceObj.LoadData(gameData);
+            foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+            {
+                dataPersistenceObj.LoadData(gameData);
+            }
         }
     }
 
@@ -71,22 +84,25 @@ public class DataPersistenceManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
+        ShopButtonHandler.fishBought += HandleFishBought;
     }
 
     private void OnDisable() 
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        ShopButtonHandler.fishBought -= HandleFishBought;
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
+    private void HandleFishBought()
     {
-        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
-        LoadGame();
+        SaveGame();
     }
+    
 
     public void OnSceneUnloaded(Scene scene)
     {
+        LoadGame();
         SaveGame();
     }
     private void OnApplicationQuit()

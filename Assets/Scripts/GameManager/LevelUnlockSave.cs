@@ -8,32 +8,38 @@ public class LevelUnlockSave : MonoBehaviour, IDataPersistence
     [SerializeField] private WinCondition wincondition;
     
     [SerializeField] private int levelNumberIfPlayerWin = 0;
-    private int levelNumber = 0;//this value will change base on if player win or lose
+    [SerializeField] private int levelNumber = 0;//this value will change base on if player win or lose
+
+    [SerializeField] private string fishIDToUnlockIfWin;
 
 
     void Start()
     {
-        wincondition.OnPlayerWin += ChangeNumberOfLevelComplete;
+        wincondition.OnPlayerWin += WhenPlayerWinLevel;
     }
-
-    private void Update()
-    {
-        Debug.Log(levelNumber);
-    }
-
-    public void ChangeNumberOfLevelComplete()
-    {
-        levelNumber = levelNumberIfPlayerWin;
-    }
-
     private void OnDestroy()
     {
-        wincondition.OnPlayerWin -= ChangeNumberOfLevelComplete;
+        wincondition.OnPlayerWin -= WhenPlayerWinLevel;
     }
 
+    public void WhenPlayerWinLevel()
+    {
+        levelNumber = levelNumberIfPlayerWin;
+        
+    }
     public void SaveData(GameData data)
     {
-        data.completedLevels = levelNumber;
+        if (data.completedLevels <= levelNumber)
+        {
+            Debug.Log("call 113");
+            data.completedLevels = levelNumber;
+            if (data.unlockedFish.ContainsKey(fishIDToUnlockIfWin))
+            {
+                data.unlockedFish.Remove(fishIDToUnlockIfWin);
+            }
+            data.unlockedFish.Add(fishIDToUnlockIfWin, true);
+        }
+        
     }
     public void LoadData(GameData data) { }
 }
