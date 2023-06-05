@@ -88,13 +88,17 @@ public class FishDriversManager : MonoBehaviour
     //if fish hungry then,the timer on spawn coin function won't run
     public void CheckIfTheFishCanSpawnCoin()
     {
+        if (spawnObjectClass == null)
+        {
+            return;
+        }
         if (fishHungry)
         {
-            spawnObjectClass.TimerOn = false;
+            spawnObjectClass.timerOn = false;
         }
         else
         {
-            spawnObjectClass.TimerOn = true;
+            spawnObjectClass.timerOn = true;
         }
     }
 }

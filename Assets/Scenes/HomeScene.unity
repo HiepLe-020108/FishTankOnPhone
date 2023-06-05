@@ -16982,7 +16982,6 @@ MonoBehaviour:
   TotalMoney: 0
   startingMoney: 1000
   moneyText: {fileID: 646161761}
-  isHomeScene: 0
 --- !u!4 &1984095299
 Transform:
   m_ObjectHideFlags: 0
@@ -22538,6 +22537,10 @@ PrefabInstance:
     - target: {fileID: 473694710480094612, guid: 89bc489d9fc15d540b03d27bee86c38c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819684526347579954, guid: 89bc489d9fc15d540b03d27bee86c38c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89bc489d9fc15d540b03d27bee86c38c, type: 3}

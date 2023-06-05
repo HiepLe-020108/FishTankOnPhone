@@ -9,26 +9,12 @@ public class MoneyManager : MonoBehaviour, IDataPersistence
     public int TotalMoney;
     [SerializeField] private int startingMoney = 100;
     [SerializeField] private TMP_Text moneyText;
-    [SerializeField] private bool isHomeScene = false;
-     
-    
-    
+
+
+
     public delegate void OnMoneyChangedDelegate(float newTotalMoney);
     public event OnMoneyChangedDelegate OnMoneyChanged;
-    private void Awake()
-    {
-        if (!isHomeScene)
-        {
-            TotalMoney = startingMoney;
-        }
-        if(isHomeScene)
-        {
-            if (TotalMoney == 0)
-            {
-                TotalMoney = startingMoney;
-            }
-        }
-    }
+   
 
     public void AddMoney(int moneyToAdd)
     {

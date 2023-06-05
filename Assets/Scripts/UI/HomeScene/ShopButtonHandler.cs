@@ -50,13 +50,21 @@ public class ShopButtonHandler : MonoBehaviour
     }
     private void CheckButtonUnlock()
     {
-        Debug.Log("call");
         for (int i = 0; i < fishGameObjectList.Count; i++)
         {
             GameObject fishObject = fishGameObjectList[i];
             bool isUnlocked = fishObject.GetComponent<FishIDMakingAndBought>().beenUnlock;
+            bool isBought = fishObject.GetComponent<FishIDMakingAndBought>().beenBought;
             Button button = _buttons[i];
-            button.interactable = isUnlocked;
+
+            if (!isUnlocked || isBought)
+            {
+                button.interactable = false;
+            }
+            else
+            {
+                button.interactable = true;
+            }
         }
     }
 
@@ -70,10 +78,17 @@ public class ShopButtonHandler : MonoBehaviour
         {
             lastClickedButton.interactable = true;
         }
-        
-        var clickedButton = _buttons[index].GetComponent<Button>();
-        clickedButton.interactable = false;
-        lastClickedButton = clickedButton;
+
+        GameObject fishObject = fishGameObjectList[index];
+        bool isUnlocked = fishObject.GetComponent<FishIDMakingAndBought>().beenUnlock;
+        bool isBought = fishObject.GetComponent<FishIDMakingAndBought>().beenBought;
+        Button clickedButton = _buttons[index];
+
+        if (isUnlocked && !isBought)
+        {
+            clickedButton.interactable = false;
+            lastClickedButton = clickedButton;
+        }
     }
 
     private void AddFish(int index)

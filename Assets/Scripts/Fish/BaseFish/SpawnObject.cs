@@ -3,46 +3,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//attach to Fish
 public class SpawnObject : MonoBehaviour
 {
     [SerializeField] private FishTypeSO fishTypeSO;
-    private float TimeLeft;
-    public bool TimerOn; // if this var is true then timer of the SpawnCoin action will reduce till timer = 0, 
-    //if this var is false then the fish will not be able to spawn object
-    // this var will be used in FishDriverManager script which is attach to the Fish gameObject
+    private float timeLeft;
+    public bool timerOn;
+    private GameObject spawnedObject;
 
-    
     private void Start()
     {
-        TimerOn = true;
-        TimeLeft = fishTypeSO.timeNeedToSpawn;
+        timerOn = true;
+        timeLeft = fishTypeSO.timeNeedToSpawn;
+        ShowCollectMoneyBoard.OnObjectDestroyed += OnObjectDestroyedHandler;
     }
 
     private void Update()
     {
-        if (TimerOn)
+        Debug.Log(timeLeft);
+        if (timerOn)
         {
-            if (TimeLeft > 0)
+            if (timeLeft > 0)
             {
-                TimeLeft -= Time.deltaTime;
+                timeLeft -= Time.deltaTime;
             }
             else
             {
-                TimeLeft = 0;
-                TimerOn = false;
+                timeLeft = 0;
                 Spawn();
             }
         }
     }
 
-    public void Spawn()
+    private void Spawn()
     {
-        GameObject cloneCoin = Instantiate(fishTypeSO.objectToSpawn, transform.position, Quaternion.identity);
-        TimeLeft = fishTypeSO.timeNeedToSpawn;
-        TimerOn = true;
+        if (spawnedObject != null)
+        {
+            Destroy(spawnedObject);
+        }
+
+        if (fishTypeSO.objectToSpawn.GetComponent<Coin>() != null)
+        {
+            spawnedObject = Instantiate(fishTypeSO.objectToSpawn, transform.position, Quaternion.identity);
+            timerOn = true;
+            timeLeft = fishTypeSO.timeNeedToSpawn;
+        }
+        else if (fishTypeSO.objectToSpawn.GetComponent<ShowCollectMoneyBoard>() != null)
+        {
+            spawnedObject = Instantiate(fishTypeSO.objectToSpawn, transform);
+            spawnedObject.transform.localPosition = Vector3.zero;
+            timerOn = false;
+            
+        }
+        else
+        {
+            Debug.LogWarning("SpawnObject: Unknown object script.");
+        }
+
+        
     }
-    
-    
+
+    private void OnObjectDestroyedHandler()
+    {
+        timerOn = true;
+        timeLeft = fishTypeSO.timeNeedToSpawn;
+    }
+
+    private void OnDisable()
+    {
+        ShowCollectMoneyBoard.OnObjectDestroyed -= OnObjectDestroyedHandler;
+    }
 }
