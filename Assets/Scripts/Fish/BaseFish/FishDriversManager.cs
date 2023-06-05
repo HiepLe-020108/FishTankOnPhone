@@ -92,13 +92,9 @@ public class FishDriversManager : MonoBehaviour
         {
             return;
         }
-        if (fishHungry)
+        if (!fishHungry)
         {
-            spawnObjectClass.timerOn = false;
-        }
-        else
-        {
-            spawnObjectClass.timerOn = true;
+            spawnObjectClass.RunTimer();
         }
     }
 }

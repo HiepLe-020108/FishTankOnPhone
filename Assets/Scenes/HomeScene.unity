@@ -9002,7 +9002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1055716172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16136,9 +16136,9 @@ MonoBehaviour:
   _camera: {fileID: 1612942982}
   zoom: 10
   damping: -1
-  clamp: 0
-  clampMin: 10
-  clampMax: 60
+  clamp: 1
+  clampMin: 5
+  clampMax: 10
   relative: 0
   ignoreZ: 0
   ScreenDepth:
@@ -22541,6 +22541,14 @@ PrefabInstance:
     - target: {fileID: 5819684526347579954, guid: 89bc489d9fc15d540b03d27bee86c38c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753031116055570022, guid: 89bc489d9fc15d540b03d27bee86c38c, type: 3}
+      propertyPath: spawnOffsetX
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753031116055570022, guid: 89bc489d9fc15d540b03d27bee86c38c, type: 3}
+      propertyPath: spawnOffsetY
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89bc489d9fc15d540b03d27bee86c38c, type: 3}

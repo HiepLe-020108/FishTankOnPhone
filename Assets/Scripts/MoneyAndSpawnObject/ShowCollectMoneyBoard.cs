@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShowCollectMoneyBoard : MonoBehaviour
@@ -19,23 +20,9 @@ public class ShowCollectMoneyBoard : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
         moneyManager.AddMoney(coinValue);
-        OnDestroy();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag(tagObjectThatCollectMoney))
-        {
-            moneyManager.AddMoney(coinValue);
-            Destroy(gameObject);
-            OnDestroy();
-        }
-    }
-
-    private void OnDestroy()
-    {
         OnObjectDestroyed?.Invoke();
+        this.gameObject.SetActive(false);
+        Destroy(this.gameObject, 5f);
     }
 }
