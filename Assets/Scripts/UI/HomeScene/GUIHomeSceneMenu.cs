@@ -11,6 +11,7 @@ public class GUIHomeSceneMenu : MonoBehaviour
         [SerializeField] private Button _shopCloseButton;
         [SerializeField] private Button _loadLevel1Button;
         [SerializeField] private Button _loadLevel2Button;
+        [SerializeField] private Button _loadLevel3Button;
         [SerializeField] private Button _openLevelSelectMenu;
         [SerializeField] private Button _closeLevelSelectMenu;
         [Header("GameObject", order = 2)] 
@@ -25,6 +26,7 @@ public class GUIHomeSceneMenu : MonoBehaviour
            _shopCloseButton.onClick.AddListener(CloseShop);
            _loadLevel1Button.onClick.AddListener(LoadLevel1);
            _loadLevel2Button.onClick.AddListener(LoadLevel2);
+           _loadLevel3Button.onClick.AddListener(LoadLevel3);
            _openLevelSelectMenu.onClick.AddListener(OpenLevelSelectMenu);
            _closeLevelSelectMenu.onClick.AddListener(CloseLevelSelectMenu);
            
@@ -68,7 +70,11 @@ public class GUIHomeSceneMenu : MonoBehaviour
             ScenesManager.Instance.LoadLevel02Game();
             Time.timeScale = 1f;
         }
-    
+        private void LoadLevel3()
+        {
+            ScenesManager.Instance.LoadLevel03Game();
+            Time.timeScale = 1f;
+        }
         
 }
 

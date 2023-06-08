@@ -17,7 +17,8 @@ public class ScenesManager : MonoBehaviour
     {
         HomeScene,
         Level01,
-        Level02
+        Level02,
+        Level03
     }
 
     public void LoadScene(Scene scene)
@@ -32,6 +33,10 @@ public class ScenesManager : MonoBehaviour
     public void LoadLevel02Game()
     {
         SceneManager.LoadScene(Scene.Level02.ToString());
+    }
+    public void LoadLevel03Game()
+    {
+        SceneManager.LoadScene(Scene.Level03.ToString());
     }
 
     public void LoadNextScene()
