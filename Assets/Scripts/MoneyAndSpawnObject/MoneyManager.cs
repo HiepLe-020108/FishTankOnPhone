@@ -14,8 +14,16 @@ public class MoneyManager : MonoBehaviour, IDataPersistence
 
     public delegate void OnMoneyChangedDelegate(float newTotalMoney);
     public event OnMoneyChangedDelegate OnMoneyChanged;
-   
 
+    private void Awake()
+    {
+        StartCoroutine(DelayedInitialization());
+    }
+    private IEnumerator DelayedInitialization()
+    {
+        yield return new WaitForSeconds(0.01f);
+        TotalMoney = startingMoney;
+    }
     public void AddMoney(int moneyToAdd)
     {
         TotalMoney += moneyToAdd;

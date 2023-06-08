@@ -12,7 +12,7 @@ public class FishGrow : MonoBehaviour
     [SerializeField] private float scaleChangeSpeed = 10f;
     private Vector3 scaleChange, scaleChangeBig, scaleChangeAmount;
 
-    [SerializeField] private FishTypeSO fishTypeSo;
+    [SerializeField] private FishDriversManager fishDriversManager;
 
     private float startTime; //to check the amount of time the fish have been existed
     [SerializeField] private string tagChangeTo;
@@ -31,7 +31,7 @@ public class FishGrow : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - startTime >= fishTypeSo.timeNeedToGrow && fishHasGrown == false)
+        if (Time.time - startTime >= fishDriversManager.fishTypeSO.timeNeedToGrow && fishHasGrown == false)
         {
             //grow fish
             fishHasGrown = true;

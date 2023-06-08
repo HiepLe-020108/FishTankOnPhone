@@ -5,20 +5,19 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    [SerializeField] private FishTypeSO fishTypeSO;
+    [SerializeField] private FishDriversManager fishDriversManager;
     private float timeLeft;
     private bool alreadyRun;
     public bool timerOn;
     private GameObject spawnedObject;
     [SerializeField] private float spawnOffsetX = 0f;
     [SerializeField] private float spawnOffsetY = 0f;
-    [SerializeField] private float spawnOffsetZ = 0f;
 
     private void Start()
     {
         alreadyRun = false;
         timerOn = true;
-        timeLeft = fishTypeSO.timeNeedToSpawn;
+        timeLeft = fishDriversManager.fishTypeSO.timeNeedToSpawn;
     }
     
     public void RunTimer()
@@ -27,7 +26,7 @@ public class SpawnObject : MonoBehaviour
         {
             if (timeLeft > 0)
             {
-                Debug.Log($"Timer: {timeLeft}");
+               // Debug.Log($"Timer: {timeLeft}");
                 timeLeft -= Time.deltaTime;
             }
             else
@@ -40,19 +39,18 @@ public class SpawnObject : MonoBehaviour
 
     private void Spawn()
     {
-        Debug.Log($"Spawn fired");
-        if (fishTypeSO.objectToSpawn.GetComponent<Coin>() != null)
+        if (fishDriversManager.fishTypeSO.objectToSpawn.GetComponent<Coin>() != null)
         {
             Debug.Log($"Spawn coin");
-            spawnedObject = Instantiate(fishTypeSO.objectToSpawn, transform.position, Quaternion.identity);
+            spawnedObject = Instantiate(fishDriversManager.fishTypeSO.objectToSpawn, transform.position, Quaternion.identity);
             timerOn = true;
-            timeLeft = fishTypeSO.timeNeedToSpawn;
+            timeLeft = fishDriversManager.fishTypeSO.timeNeedToSpawn;
         }
-        else if (fishTypeSO.objectToSpawn.GetComponent<ShowCollectMoneyBoard>() != null)
+        else if (fishDriversManager.fishTypeSO.objectToSpawn.GetComponent<ShowCollectMoneyBoard>() != null)
         {
             Debug.Log($"Spawn board");
             
-            spawnedObject = Instantiate(fishTypeSO.objectToSpawn, transform);
+            spawnedObject = Instantiate(fishDriversManager.fishTypeSO.objectToSpawn, transform);
             spawnedObject.transform.localPosition =
                 new Vector3(this.transform.localPosition.x +spawnOffsetX,
                     this.transform.localPosition.y + spawnOffsetY, this.transform.localPosition.z);
@@ -70,7 +68,7 @@ public class SpawnObject : MonoBehaviour
         Debug.Log("call");
         timerOn = true;
         alreadyRun = false;
-        timeLeft = fishTypeSO.timeNeedToSpawn;
+        timeLeft = fishDriversManager.fishTypeSO.timeNeedToSpawn;
     }
 
     private void OnEnable()

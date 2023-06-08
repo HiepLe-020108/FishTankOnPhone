@@ -16,11 +16,11 @@ public class FishFollowFood : MonoBehaviour
 
     [SerializeField] private FishDriversManager fishDriversManager;
 
-    [SerializeField] private FishTypeSO fishTypeSO;
+   // [SerializeField] private FishTypeSO fishTypeSO;
     // Update is called once per frame
    public void MoveToFood()
    {
-       var food = FindClosestPieceOfFood(fishTypeSO.foodTag);
+       var food = FindClosestPieceOfFood(fishDriversManager.fishTypeSO.foodTag);
        
         if (food)
         {

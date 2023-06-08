@@ -13,7 +13,7 @@ public class FishDriversManager : MonoBehaviour
     [SerializeField] private FishGrow fishGrow;
     [SerializeField] private SpawnObject spawnObjectClass;
     [FormerlySerializedAs("_changeColor")] [SerializeField] private FishShowItIsHungry showItIsHungry;
-    [SerializeField] private FishTypeSO fishTypeSO;
+    public FishTypeSO fishTypeSO;
     
     public bool fishHungry = false;
 

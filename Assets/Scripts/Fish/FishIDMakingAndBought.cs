@@ -10,6 +10,10 @@ public class FishIDMakingAndBought : MonoBehaviour, IDataPersistence
     public bool beenUnlock = false;
 
     [ContextMenu("Generate guid for id")]
+    private void GenerateGuid() 
+    {
+        id = System.Guid.NewGuid().ToString();
+    }
     private void OnEnable() 
     {
         ShopButtonHandler.getFishID += OnGetFishID;

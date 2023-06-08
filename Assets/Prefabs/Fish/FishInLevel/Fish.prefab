@@ -1166,7 +1166,6 @@ MonoBehaviour:
   moveSpeed: 2
   haveFood: 0
   fishDriversManager: {fileID: 6233894028055565733}
-  fishTypeSO: {fileID: 11400000, guid: 7ac8556060fb0074aa0e4d4ff667f3ab, type: 2}
 --- !u!114 &-5263548748291570952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,8 +1178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0cfda784443ec84b80a0769fbcc387a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishTypeSO: {fileID: 11400000, guid: 7ac8556060fb0074aa0e4d4ff667f3ab, type: 2}
-  TimerOn: 0
+  fishDriversManager: {fileID: 6233894028055565733}
+  timerOn: 0
+  spawnOffsetX: 0
+  spawnOffsetY: 0
 --- !u!114 &-518944165940097077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,7 +1196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canChangeSize: 0
   scaleChangeSpeed: 30
-  fishTypeSo: {fileID: 11400000, guid: 7ac8556060fb0074aa0e4d4ff667f3ab, type: 2}
+  fishDriversManager: {fileID: 6233894028055565733}
   tagChangeTo: BigFish
 --- !u!136 &4508637260937733721
 CapsuleCollider:
