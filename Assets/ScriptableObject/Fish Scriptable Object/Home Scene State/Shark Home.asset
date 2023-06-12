@@ -17,7 +17,7 @@ MonoBehaviour:
   TheFish: {fileID: 6628933752595554581, guid: efe1137a18158424c82a2c4e86ac4670, type: 3}
   FishImage: {fileID: 21300000, guid: cfec78af35f49dd4fabf5329be8c8bb9, type: 3}
   FishSpeed: 1
-  FishStamina: 420
+  FishStamina: 420000
   FishType: 2
   timeNeedToGrow: 180000
   foodTag: Fish

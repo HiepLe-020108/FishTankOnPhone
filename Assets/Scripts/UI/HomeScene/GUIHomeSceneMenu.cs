@@ -17,6 +17,9 @@ public class GUIHomeSceneMenu : MonoBehaviour
         [Header("GameObject", order = 2)] 
         [SerializeField] private GameObject shopMenu;
         [SerializeField] private GameObject levelSelectMenu;
+
+        [Header("Reference", order = 3)] 
+        [SerializeField] private AudioManager audioManager;
         
 
         // Start is called before the first frame update
@@ -38,40 +41,41 @@ public class GUIHomeSceneMenu : MonoBehaviour
         private void OpenShop()
         {
              shopMenu.SetActive(true);
-             Time.timeScale = 0f;
-            
+             audioManager.PlayOneShot("Click");
         }
         private void CloseShop()
         {
+            audioManager.PlayOneShot("Click");
             shopMenu.SetActive(false);
-            Time.timeScale = 1f;
-            
         }
 
         private void OpenLevelSelectMenu()
         {
+            audioManager.PlayOneShot("Click");
             levelSelectMenu.SetActive(true);
-            Time.timeScale = 0f;
         }
         private void CloseLevelSelectMenu()
         {
+            audioManager.PlayOneShot("Click");
             levelSelectMenu.SetActive(false);
-            Time.timeScale = 1f;
         }
 
         private void LoadLevel1()
         {
+            audioManager.PlayOneShot("Click");
             ScenesManager.Instance.LoadNewGame();
             Time.timeScale = 1f;
         }
 
         private void LoadLevel2()
         {
+            audioManager.PlayOneShot("Click");
             ScenesManager.Instance.LoadLevel02Game();
             Time.timeScale = 1f;
         }
         private void LoadLevel3()
         {
+            audioManager.PlayOneShot("Click");
             ScenesManager.Instance.LoadLevel03Game();
             Time.timeScale = 1f;
         }

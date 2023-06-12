@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eaacffc980a854c8fc07d3a1b4c8d3, type: 3}
+  m_Name: BackGroundMusic
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 183068daf3109aa43958082fbe61bc9f, type: 2}
+  _files:
+  - audioName: BackGroundMusic
+    volume: 1
+    pitch: 1
+    looping: 0
+    clips:
+      list:
+      - item: {fileID: 8300000, guid: 0c576007a5dce4f45a0295cb1545dd71, type: 3}
+        weight: 2

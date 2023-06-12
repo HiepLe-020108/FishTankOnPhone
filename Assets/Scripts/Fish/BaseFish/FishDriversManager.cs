@@ -14,6 +14,8 @@ public class FishDriversManager : MonoBehaviour
     [SerializeField] private SpawnObject spawnObjectClass;
     [FormerlySerializedAs("_changeColor")] [SerializeField] private FishShowItIsHungry showItIsHungry;
     public FishTypeSO fishTypeSO;
+    [SerializeField] private AudioManager audioManager;
+    
     
     public bool fishHungry = false;
 
@@ -53,6 +55,7 @@ public class FishDriversManager : MonoBehaviour
     //this function is call when the fish eat
     public void FishGetFeed()
     {
+        audioManager.PlayOneShot("Eat");
         timeTillFishHungry = fishTypeSO.FishStamina;
         fishHungry = false;
     }
