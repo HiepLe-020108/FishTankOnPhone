@@ -26,6 +26,7 @@ public class UIInLevelMenu : MonoBehaviour
     
     [Header("Reference", order = 3)] 
     [SerializeField] private SpawnEnemy spawnEnemyInEnemyManager;//this is here to start spawn enemy countdown after we close preplay menu
+    [SerializeField] private AudioManager _audioManager;
     
     // Start is called before the first frame update
     void Start()
@@ -60,25 +61,28 @@ public class UIInLevelMenu : MonoBehaviour
 
     private void LoadNextLevel()
     {
+        PlayButtonClickSoundEffect();
         ScenesManager.Instance.LoadNextScene();
         Time.timeScale = 1f;
     }
     private void ToHomeScene()
     {   
+        PlayButtonClickSoundEffect();
         ScenesManager.Instance.LoadHomeScene();
         Time.timeScale = 1f;
     }
     private void Pause()
     {
+        PlayButtonClickSoundEffect();
          pauseMenu.SetActive(true);
          inLevelUI.SetActive(false);
          SoundMenu.SetActive(false);
          Time.timeScale = 0f;
-        
     }
     
     private void Resume()
     {
+        PlayButtonClickSoundEffect();
         pauseMenu.SetActive(false);
         inLevelUI.SetActive(true);
         Time.timeScale = 1f;
@@ -86,6 +90,7 @@ public class UIInLevelMenu : MonoBehaviour
 
     private void ChangeFromPrePlayMenuToInLevelUI()
     {
+        PlayButtonClickSoundEffect();
         PrePlayMenu.SetActive(false);
         Time.timeScale = 1f;
         inLevelUI.SetActive(true);
@@ -93,16 +98,21 @@ public class UIInLevelMenu : MonoBehaviour
     }
     private void ToSoundMenu()
     {
+        PlayButtonClickSoundEffect();
         pauseMenu.SetActive(false);
         SoundMenu.SetActive(true);
     }
 
     private void Restart()
     {
+        PlayButtonClickSoundEffect();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
-    
 
-   
+    void PlayButtonClickSoundEffect()
+    {
+        _audioManager.PlayOneShot("Click");
+    }
+
 }

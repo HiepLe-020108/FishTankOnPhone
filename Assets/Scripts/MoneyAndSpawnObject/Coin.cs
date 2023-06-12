@@ -12,6 +12,8 @@ public class Coin : MonoBehaviour
     [SerializeField] private string tagObjectThatCollectMoney;
     private GameObject bottom;
     [SerializeField] private GameObject thisObject;
+
+    [SerializeField] private AudioManager audioManager;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class Coin : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        PlaySoundCoinCollected();
         moneyManager.AddMoney(coinValue);
         Destroy(thisObject);
     }
@@ -42,8 +45,14 @@ public class Coin : MonoBehaviour
     {
         if (other.gameObject.CompareTag(tagObjectThatCollectMoney))
         {
+            PlaySoundCoinCollected();
             moneyManager.AddMoney(coinValue);
             Destroy(thisObject);
         }
+    }
+
+    private void PlaySoundCoinCollected()
+    {
+        audioManager.PlayOneShot("CoinCollected");
     }
 }

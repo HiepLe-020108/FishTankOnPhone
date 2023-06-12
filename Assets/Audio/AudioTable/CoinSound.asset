@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6eaacffc980a854c8fc07d3a1b4c8d3, type: 3}
+  m_Name: CoinSound
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: e907cc4b56c6215418107b70aedd70d6, type: 2}
+  _files:
+  - audioName: CoinCollected
+    volume: 1
+    pitch: 1
+    looping: 0
+    clips:
+      list:
+      - item: {fileID: 8300000, guid: 54ca66bea93dd424ea5ca2743f3e0aed, type: 3}
+        weight: 2
