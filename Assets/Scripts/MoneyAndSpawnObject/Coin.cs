@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Coin : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Coin : MonoBehaviour
     private GameObject bottom;
     [SerializeField] private GameObject thisObject;
 
-    [SerializeField] private AudioManager audioManager;
+    [FormerlySerializedAs("audioManager")] [SerializeField] private AudioSetting audioSetting;
     
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,6 @@ public class Coin : MonoBehaviour
 
     private void PlaySoundCoinCollected()
     {
-        audioManager.PlayOneShot("CoinCollected");
+        audioSetting.PlayOneShot("CoinCollected");
     }
 }

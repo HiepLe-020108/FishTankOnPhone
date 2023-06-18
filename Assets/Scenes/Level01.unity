@@ -1667,7 +1667,7 @@ Camera:
   far clip plane: 1000
   field of view: 10
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1718,11 +1718,11 @@ MonoBehaviour:
     RequiredMouseButtons: 0
     RequiredSelectable: {fileID: 0}
   _camera: {fileID: 861745745}
-  zoom: 10
+  zoom: 5
   damping: -1
-  clamp: 0
-  clampMin: 10
-  clampMax: 60
+  clamp: 1
+  clampMin: 5
+  clampMax: 10
   relative: 0
   ignoreZ: 0
   ScreenDepth:
@@ -1733,7 +1733,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4294967291
     Distance: 0
-  currentZoom: 10
+  currentZoom: 5
   remainingTranslation: {x: 0, y: 0, z: 0}
 --- !u!114 &861745748
 MonoBehaviour:
@@ -17439,38 +17439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1040811086032951078, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
-      propertyPath: m_fontSize
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1040811086032951078, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 68e4fff4a79677148a18e8921bfff6e2, type: 2}
-    - target: {fileID: 1040811086032951078, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7463270824768269078, guid: 68e4fff4a79677148a18e8921bfff6e2, type: 2}
-    - target: {fileID: 1040811086032951079, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
-      propertyPath: m_Name
-      value: Number of fish Text
-      objectReference: {fileID: 0}
-    - target: {fileID: 1040811086562160040, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
-      propertyPath: m_Name
-      value: Moneytext
-      objectReference: {fileID: 0}
-    - target: {fileID: 1040811086562160046, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
-      propertyPath: m_fontSize
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1040811086562160046, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 68e4fff4a79677148a18e8921bfff6e2, type: 2}
-    - target: {fileID: 1040811086562160046, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7463270824768269078, guid: 68e4fff4a79677148a18e8921bfff6e2, type: 2}
     - target: {fileID: 1040811086619287584, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -17567,6 +17535,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1504659875}
+    - target: {fileID: 1422356900658483416, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
+      propertyPath: soAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f02907dd263c1043ae7a1ee9facb993, type: 2}
+    - target: {fileID: 1513781272740673518, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
+      propertyPath: soAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f02907dd263c1043ae7a1ee9facb993, type: 2}
+    - target: {fileID: 9098343649217249941, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
+      propertyPath: soAudio
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f02907dd263c1043ae7a1ee9facb993, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
 --- !u!1001 &7723512996292362128

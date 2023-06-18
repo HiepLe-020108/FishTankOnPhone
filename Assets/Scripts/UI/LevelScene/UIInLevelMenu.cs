@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class UIInLevelMenu : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class UIInLevelMenu : MonoBehaviour
     
     [Header("Reference", order = 3)] 
     [SerializeField] private SpawnEnemy spawnEnemyInEnemyManager;//this is here to start spawn enemy countdown after we close preplay menu
-    [SerializeField] private AudioManager _audioManager;
+    [FormerlySerializedAs("_audioManager")] [SerializeField] private AudioSetting audioSetting;
     
     // Start is called before the first frame update
     void Start()
@@ -112,7 +113,7 @@ public class UIInLevelMenu : MonoBehaviour
 
     void PlayButtonClickSoundEffect()
     {
-        _audioManager.PlayOneShot("Click");
+        audioSetting.PlayOneShot("Click");
     }
 
 }

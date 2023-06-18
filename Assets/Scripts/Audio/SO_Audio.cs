@@ -21,8 +21,8 @@ public class AudioFile
     public AudioClip GetAudioClip() => clips.GetRandom();
 }
 
-[CreateAssetMenu(menuName = "System/Audio Table", fileName = "New Audio Table")]
-public class AudioTable : ScriptableObject
+[CreateAssetMenu(menuName = "System/Audio Scriptable object", fileName = "New Audio scriptable object")]
+public class SO_Audio : ScriptableObject
 {
     public AudioMixerGroup mixerGroup;
     

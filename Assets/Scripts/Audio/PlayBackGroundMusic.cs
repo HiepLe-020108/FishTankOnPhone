@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayBackGroundMusic : MonoBehaviour
 {
-    public AudioManager audioManager;
+    public AudioSetting audioSetting;
     // Start is called before the first frame update
     void Start()
     {
-        audioManager.Play("BackGroundMusic", true);
+        audioSetting.Play("BackGroundMusic", true);
     }
 
     // Update is called once per frame

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GUIHomeSceneMenu : MonoBehaviour
 {
@@ -18,8 +19,9 @@ public class GUIHomeSceneMenu : MonoBehaviour
         [SerializeField] private GameObject shopMenu;
         [SerializeField] private GameObject levelSelectMenu;
 
+        [FormerlySerializedAs("audioManager")]
         [Header("Reference", order = 3)] 
-        [SerializeField] private AudioManager audioManager;
+        [SerializeField] private AudioSetting audioSetting;
         
 
         // Start is called before the first frame update
@@ -41,41 +43,41 @@ public class GUIHomeSceneMenu : MonoBehaviour
         private void OpenShop()
         {
              shopMenu.SetActive(true);
-             audioManager.PlayOneShot("Click");
+             audioSetting.PlayOneShot("Click");
         }
         private void CloseShop()
         {
-            audioManager.PlayOneShot("Click");
+            audioSetting.PlayOneShot("Click");
             shopMenu.SetActive(false);
         }
 
         private void OpenLevelSelectMenu()
         {
-            audioManager.PlayOneShot("Click");
+            audioSetting.PlayOneShot("Click");
             levelSelectMenu.SetActive(true);
         }
         private void CloseLevelSelectMenu()
         {
-            audioManager.PlayOneShot("Click");
+            audioSetting.PlayOneShot("Click");
             levelSelectMenu.SetActive(false);
         }
 
         private void LoadLevel1()
         {
-            audioManager.PlayOneShot("Click");
+            audioSetting.PlayOneShot("Click");
             ScenesManager.Instance.LoadNewGame();
             Time.timeScale = 1f;
         }
 
         private void LoadLevel2()
         {
-            audioManager.PlayOneShot("Click");
+            audioSetting.PlayOneShot("Click");
             ScenesManager.Instance.LoadLevel02Game();
             Time.timeScale = 1f;
         }
         private void LoadLevel3()
         {
-            audioManager.PlayOneShot("Click");
+            audioSetting.PlayOneShot("Click");
             ScenesManager.Instance.LoadLevel03Game();
             Time.timeScale = 1f;
         }

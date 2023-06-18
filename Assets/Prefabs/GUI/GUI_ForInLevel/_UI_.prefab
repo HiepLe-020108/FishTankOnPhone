@@ -2192,7 +2192,7 @@ GameObject:
   - component: {fileID: 1040811086032951077}
   - component: {fileID: 1040811086032951078}
   m_Layer: 5
-  m_Name: Number of fish
+  m_Name: Number of fish Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2251,8 +2251,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68e4fff4a79677148a18e8921bfff6e2, type: 2}
+  m_sharedMaterial: {fileID: 7463270824768269078, guid: 68e4fff4a79677148a18e8921bfff6e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2276,7 +2276,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 52
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4147,7 +4147,7 @@ GameObject:
   - component: {fileID: 1040811086562160045}
   - component: {fileID: 1040811086562160046}
   m_Layer: 5
-  m_Name: Money
+  m_Name: Moneytext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4206,8 +4206,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68e4fff4a79677148a18e8921bfff6e2, type: 2}
+  m_sharedMaterial: {fileID: 7463270824768269078, guid: 68e4fff4a79677148a18e8921bfff6e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4231,7 +4231,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 52
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4551,7 +4551,7 @@ MonoBehaviour:
   doneMenu: {fileID: 1040811087210102296}
   SoundMenu: {fileID: 926005467837445140}
   spawnEnemyInEnemyManager: {fileID: 0}
-  _audioManager: {fileID: 1513781272740673518}
+  audioSetting: {fileID: 1513781272740673518}
 --- !u!82 &7053847475083819157
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4661,7 +4661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 7053847475083819157}
-  audioTable: {fileID: 11400000, guid: 8f02907dd263c1043ae7a1ee9facb993, type: 2}
+  soAudio: {fileID: 0}
 --- !u!1 &1040811086648542302
 GameObject:
   m_ObjectHideFlags: 0
@@ -7198,7 +7198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 5774310572253323652}
-  audioTable: {fileID: 11400000, guid: 8f02907dd263c1043ae7a1ee9facb993, type: 2}
+  soAudio: {fileID: 0}
 --- !u!1 &1040811087391809103
 GameObject:
   m_ObjectHideFlags: 0
@@ -7477,7 +7477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a88d28a1d6de27c418fe34d102a2b296, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb4595294ae3c924faccde948a58574d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7952,7 +7952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 5449891882956231227}
-  audioTable: {fileID: 11400000, guid: 8f02907dd263c1043ae7a1ee9facb993, type: 2}
+  soAudio: {fileID: 0}
 --- !u!1 &1040811087625099581
 GameObject:
   m_ObjectHideFlags: 0

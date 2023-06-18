@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class AudioManager : MonoBehaviour
+public class AudioSetting : MonoBehaviour
 {
     [SerializeField, TabGroup("Setting"), PropertySpace(SpaceBefore = 0, SpaceAfter = 5), Title("Components")] 
     private AudioSource source;
     [SerializeField, InlineEditor, TabGroup("Setting"), Title("Audio Table"), HideLabel] 
-    private AudioTable audioTable;
+    private SO_Audio soAudio;
     
     // Start is called before the first frame update
     private void Awake()
@@ -28,7 +29,7 @@ public class AudioManager : MonoBehaviour
     {
         if(source)
         {
-            source.outputAudioMixerGroup = audioTable.mixerGroup;
+            source.outputAudioMixerGroup = soAudio.mixerGroup;
         }
         else
         {
@@ -39,7 +40,7 @@ public class AudioManager : MonoBehaviour
     [TabGroup("Testing"), Button(ButtonStyle.CompactBox, Expanded = true)]
     public void Play(string audioName, bool isLooping)
     {
-        AudioFile file = audioTable.FindAudioByName(audioName);
+        AudioFile file = soAudio.FindAudioByName(audioName);
         
         if (file == null)
         {
@@ -60,7 +61,7 @@ public class AudioManager : MonoBehaviour
     [TabGroup("Testing"), Button(ButtonStyle.CompactBox, Expanded = true)]
     public void PlayOneShot(string audioName)
     {
-        AudioFile file = audioTable.FindAudioByName(audioName);
+        AudioFile file = soAudio.FindAudioByName(audioName);
         
         if (file == null)
         {
@@ -105,7 +106,7 @@ public class AudioManager : MonoBehaviour
     
     private void OnValidate()
     {
-        if (!source || !audioTable)
+        if (!source || !soAudio)
             return;
         
         SetUpSource();

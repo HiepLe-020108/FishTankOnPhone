@@ -180,7 +180,7 @@ MonoBehaviour:
   moneyManager: {fileID: 7249801473672830630, guid: 4c70f9c3885e6074ea677899677838d1, type: 3}
   tagObjectThatCollectMoney: MoneyCollector
   thisObject: {fileID: 7667004402079068645}
-  audioManager: {fileID: -8967868366414715951}
+  audioSetting: {fileID: -8967868366414715951}
 --- !u!114 &-8967868366414715951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbc5e5901ee4b6438a1fc55666cd9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  audioTable: {fileID: 11400000, guid: 5d1aa4d40952c4f418eab2375ae4c380, type: 2}
+  source: {fileID: -1524503067892482973}
+  soAudio: {fileID: 11400000, guid: 5d1aa4d40952c4f418eab2375ae4c380, type: 2}
 --- !u!82 &-1524503067892482973
 AudioSource:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ AudioSource:
   m_GameObject: {fileID: 7667004402079068645}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e907cc4b56c6215418107b70aedd70d6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
