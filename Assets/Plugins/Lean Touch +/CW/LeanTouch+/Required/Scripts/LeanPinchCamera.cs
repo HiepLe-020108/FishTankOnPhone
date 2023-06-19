@@ -221,7 +221,7 @@ namespace Lean.Touch
 		private float TryClamp(float z)
 		{
 			if (clamp == true)
-			{Debug.Log("call in here");
+			{
 				z = Mathf.Clamp(z, clampMin, clampMax);
 			}
 
