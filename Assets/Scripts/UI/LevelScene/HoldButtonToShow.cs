@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,11 @@ public string textToDisplay = "Default text";
 
 private bool isHolding = false;
 private float holdStartTime;
+
+private void Start()
+{
+    this.gameObject.SetActive(false);
+}
 
 public void OnPointerDown(PointerEventData eventData)
 {
