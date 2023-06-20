@@ -6840,6 +6840,39 @@ Transform:
   m_Father: {fileID: 1887497349}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1253952844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1040811086619287612, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
+  m_PrefabInstance: {fileID: 1040811087586579667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1253952846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253952844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd219ac2bff62648a6ae1c651c2eb5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeySafeArea: 97
+--- !u!114 &1253952853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253952844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConformX: 1
+  ConformY: 1
+  Logging: 0
 --- !u!1 &1290357079
 GameObject:
   m_ObjectHideFlags: 0
@@ -17623,6 +17656,10 @@ PrefabInstance:
       propertyPath: soAudio
       value: 
       objectReference: {fileID: 11400000, guid: 8f02907dd263c1043ae7a1ee9facb993, type: 2}
+    - target: {fileID: 8260897985573406843, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
+      propertyPath: Logging
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9098343649217249941, guid: 62e385034853bff40964f83c70ccb5b2, type: 3}
       propertyPath: soAudio
       value: 
