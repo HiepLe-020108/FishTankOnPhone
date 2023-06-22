@@ -8,8 +8,7 @@ using UnityEngine.Serialization;
 
 public class UIInLevelMenu : MonoBehaviour
 {
-    [Header("Button", order = 1)] 
-    [SerializeField] private List<Button> _mainMenuButtons = new List<Button>();
+    [Header("Button", order = 1)]
     [SerializeField] private List<Button> _pauseButtons = new List<Button>();
     [SerializeField] private List<Button> _resetButtons = new List<Button>();
     [SerializeField] private List<Button> _toHomeButtons = new List<Button>();
@@ -24,7 +23,8 @@ public class UIInLevelMenu : MonoBehaviour
     [SerializeField] private GameObject PrePlayMenu;
     [SerializeField] private GameObject doneMenu;
     [SerializeField] private GameObject SoundMenu;
-    
+    [SerializeField] private List<GameObject> buttonBuyFishList;
+
     [Header("Reference", order = 3)] 
     [SerializeField] private SpawnEnemy spawnEnemyInEnemyManager;//this is here to start spawn enemy countdown after we close preplay menu
     [FormerlySerializedAs("_audioManager")] [SerializeField] private AudioSetting audioSetting;
@@ -95,6 +95,10 @@ public class UIInLevelMenu : MonoBehaviour
         PrePlayMenu.SetActive(false);
         Time.timeScale = 1f;
         inLevelUI.SetActive(true);
+        for (int i = 0; i < buttonBuyFishList.Count; i++)
+        {
+            buttonBuyFishList[i].SetActive(true);
+        }
         spawnEnemyInEnemyManager.StartSpawnFunction();
     }
     private void ToSoundMenu()

@@ -16,10 +16,12 @@ GameObject:
   - component: {fileID: -518944165940097077}
   - component: {fileID: 4508637260937733721}
   - component: {fileID: 8554042672237086550}
+  - component: {fileID: 677195846}
+  - component: {fileID: 677195847}
   m_Layer: 0
   m_Name: FishFortune
   m_TagString: MoneyCollector
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -38,6 +40,7 @@ Transform:
   - {fileID: 1149411294245443314}
   - {fileID: 7057725456203171489}
   - {fileID: 3905089672932708916}
+  - {fileID: 7723512996450947631}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57,8 +60,9 @@ MonoBehaviour:
   fishDumbMoveAround: {fileID: 6172784955715792082}
   fishGrow: {fileID: -518944165940097077}
   spawnObjectClass: {fileID: -5263548748291570952}
-  _changeColor: {fileID: 8524595184594083201}
+  showItIsHungry: {fileID: 8524595184594083201}
   fishTypeSO: {fileID: 11400000, guid: 8975087fee4e456488babdd211a0b599, type: 2}
+  audioSetting: {fileID: 677195847}
   fishHungry: 0
   timeTillFishHungry: 0
   faceToTheRight: 0
@@ -99,7 +103,6 @@ MonoBehaviour:
   moveSpeed: 4
   haveFood: 0
   fishDriversManager: {fileID: 6233894028055565733}
-  fishTypeSO: {fileID: 11400000, guid: 8975087fee4e456488babdd211a0b599, type: 2}
 --- !u!114 &-5263548748291570952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,8 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0cfda784443ec84b80a0769fbcc387a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishTypeSO: {fileID: 11400000, guid: 7ac8556060fb0074aa0e4d4ff667f3ab, type: 2}
-  TimerOn: 0
+  fishDriversManager: {fileID: 6233894028055565733}
+  timerOn: 0
+  spawnOffsetX: 0
+  spawnOffsetY: 0
 --- !u!114 &-518944165940097077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canChangeSize: 0
   scaleChangeSpeed: 30
-  fishTypeSo: {fileID: 11400000, guid: 7ac8556060fb0074aa0e4d4ff667f3ab, type: 2}
+  fishDriversManager: {fileID: 0}
   tagChangeTo: BigFish
 --- !u!136 &4508637260937733721
 CapsuleCollider:
@@ -160,6 +165,116 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &677195846
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628933752595554581}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &677195847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628933752595554581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbc5e5901ee4b6438a1fc55666cd9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 677195846}
+  soAudio: {fileID: 11400000, guid: 65e7b333c11425548b0ccf5f28ea606e, type: 2}
 --- !u!1 &7704715947168478517
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,11 +371,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa8d6a4743557244ae1b06d19571f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftTime: 0
-  myColors:
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  forTest: 0
+  bubbleThought: {fileID: 7723512996450947630}
+--- !u!1 &7723512996450947630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7723512996450947631}
+  m_Layer: 0
+  m_Name: GameObjectThayChoThoughtBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7723512996450947631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723512996450947630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6628933752595554570}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8515129735251067032
 GameObject:
   m_ObjectHideFlags: 0

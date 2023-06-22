@@ -31,37 +31,6 @@ Transform:
   m_Father: {fileID: 7723512996014042501}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7723512995608334290
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7723512995608334291}
-  m_Layer: 0
-  m_Name: GameObjectThayChoThoughtBubble (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7723512995608334291
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723512995608334290}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.258066, y: 21.064516, z: -0.06451453}
-  m_LocalScale: {x: 0.967742, y: 0.967742, z: 0.967742}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3517832504680760755}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7723512995837516081
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,37 +166,6 @@ MonoBehaviour:
   spawnTime: 60
   spawnDelay: 50
   stopSpawn: 0
---- !u!1 &7723512996450947630
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7723512996450947631}
-  m_Layer: 0
-  m_Name: GameObjectThayChoThoughtBubble
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7723512996450947631
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723512996450947630}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3517832504623156889}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7723512996451379007
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,37 +314,6 @@ Transform:
   - {fileID: 7723512997412976666}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7723512997075077716
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7723512997075077717}
-  m_Layer: 0
-  m_Name: GameObjectThayChoThoughtBubble (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7723512997075077717
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723512997075077716}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.117946, y: 10.140997, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3517832503773939620}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7723512997112367865
 GameObject:
@@ -710,25 +617,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6628933752595554581, guid: 44336e954c07c084ab04fb7de71fbe26, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6628933752595554581, guid: 44336e954c07c084ab04fb7de71fbe26, type: 3}
       propertyPath: m_Name
       value: FishFortune
       objectReference: {fileID: 0}
-    - target: {fileID: 6628933752595554581, guid: 44336e954c07c084ab04fb7de71fbe26, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524595184594083201, guid: 44336e954c07c084ab04fb7de71fbe26, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524595184594083201, guid: 44336e954c07c084ab04fb7de71fbe26, type: 3}
-      propertyPath: bubbleThought
-      value: 
-      objectReference: {fileID: 7723512996450947630}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44336e954c07c084ab04fb7de71fbe26, type: 3}
 --- !u!1 &3517832504623156870 stripped
@@ -748,14 +639,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7723512997258278452}
     m_Modifications:
-    - target: {fileID: 5825895088972945751, guid: b66f8a1b121ec8b459cbe960cf189f98, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5825895088972945751, guid: b66f8a1b121ec8b459cbe960cf189f98, type: 3}
-      propertyPath: bubbleThought
-      value: 
-      objectReference: {fileID: 7723512995608334290}
     - target: {fileID: 6628933752595554570, guid: b66f8a1b121ec8b459cbe960cf189f98, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -803,10 +686,6 @@ PrefabInstance:
     - target: {fileID: 6628933752595554581, guid: b66f8a1b121ec8b459cbe960cf189f98, type: 3}
       propertyPath: m_Name
       value: FishMom
-      objectReference: {fileID: 0}
-    - target: {fileID: 6628933752595554581, guid: b66f8a1b121ec8b459cbe960cf189f98, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b66f8a1b121ec8b459cbe960cf189f98, type: 3}
@@ -872,25 +751,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6628933752595554581, guid: 7e5762405a6644745bffa716141a355c, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6628933752595554581, guid: 7e5762405a6644745bffa716141a355c, type: 3}
       propertyPath: m_Name
       value: FishSpawnFood
       objectReference: {fileID: 0}
-    - target: {fileID: 6628933752595554581, guid: 7e5762405a6644745bffa716141a355c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524595184594083201, guid: 7e5762405a6644745bffa716141a355c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524595184594083201, guid: 7e5762405a6644745bffa716141a355c, type: 3}
-      propertyPath: bubbleThought
-      value: 
-      objectReference: {fileID: 7723512997075077716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e5762405a6644745bffa716141a355c, type: 3}
 --- !u!4 &3517832503773939620 stripped
